@@ -1,0 +1,15 @@
+version: "1"
+services:
+  pro3sim:
+    build: .
+    ports:
+      - "8889:8889" # ホスト側のポート番号:コンテナ側のポート番号
+    volumes:
+      - ./pjf:/usr/app/pjf # ホスト側のディレクトリ:コンテナ側のディレクトリ
+      - ./volume:/usr/app/volume # ホスト側のディレクトリ:コンテナ側のディレクトリ
+    command: ["./pro3sim",
+              "-pjfDir=./pjf",
+              "-ctsDir=./volume/cts",
+              "-dbDir=./volume/db",
+              "-fileOperateDir=./volume/fileOperateDir",
+              "-providersetting=./volume/providersetting.xml"]
