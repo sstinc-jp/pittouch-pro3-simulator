@@ -68,7 +68,7 @@ func servePjfFile(w http.ResponseWriter, r *http.Request, pjfDir string) {
 	path := strings.TrimPrefix(r.URL.Path, "/pjf/")
 	path = filepath.Join(pjfDir, path)
 	if strings.HasSuffix(path, ".js") {
-		// 同名の_dev.jsが存在すればそれを有線してserveする。
+		// 同名の_dev.jsが存在すればそれを優先してserveする。
 		devName := path[:len(path)-3] + "_dev.js"
 		st, _ := os.Stat(devName)
 		if st != nil && !st.IsDir() {
