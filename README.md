@@ -77,3 +77,6 @@ github上ではサポートは受け付けていません。バグ報告や機�
 
 GPLv3です。
 
+# Copyright
+
+Copyright © 2024 Smart Solution Technology, Inc. 
